@@ -1,4 +1,4 @@
-package com.tregz.miksing.home.song
+package com.tregz.miksing.home.work
 
 import android.view.ViewGroup
 import android.widget.DatePicker
@@ -6,7 +6,7 @@ import com.tregz.miksing.R
 import com.tregz.miksing.base.BaseDialog
 import java.util.*
 
-class SongDialog(group: ViewGroup, listener: SongView, private var date: Date) :
+class WorkDialog(group: ViewGroup, listener: WorkView, private var date: Date) :
     BaseDialog(group.context), DatePicker.OnDateChangedListener {
 
     override fun onDateChanged(view: DatePicker?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
@@ -27,7 +27,7 @@ class SongDialog(group: ViewGroup, listener: SongView, private var date: Date) :
             val monthOfYear = get(Calendar.MONTH)
             val dayOfMonth = get(Calendar.DAY_OF_MONTH)
             with(view.findViewById<DatePicker>(R.id.picker_date)) {
-                init(year, monthOfYear, dayOfMonth, this@SongDialog)
+                init(year, monthOfYear, dayOfMonth, this@WorkDialog)
             }
         }
         builder.setView(view)

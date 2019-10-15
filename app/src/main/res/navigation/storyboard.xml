@@ -11,14 +11,14 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_songFragment"
-            app:destination="@id/songFragment" />
+            android:id="@+id/action_homeFragment_to_workFragment"
+            app:destination="@id/workFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/songFragment"
-        android:name="com.tregz.miksing.home.song.SongFragment"
-        android:label="SongFragment"
-        tools:layout="@layout/fragment_song" />
+        android:id="@+id/workFragment"
+        android:name="com.tregz.miksing.home.work.WorkFragment"
+        android:label="WorkFragment"
+        tools:layout="@layout/fragment_work" />
 
 </navigation>

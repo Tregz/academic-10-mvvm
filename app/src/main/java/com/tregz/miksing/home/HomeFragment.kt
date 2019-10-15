@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.tregz.miksing.R
 import com.tregz.miksing.base.BaseFragment
-import com.tregz.miksing.data.song.title
-import com.tregz.miksing.home.song.SongCollection
+import com.tregz.miksing.data.work.artist
+import com.tregz.miksing.data.work.title
+import com.tregz.miksing.home.work.WorkCollection
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : BaseFragment() {
@@ -26,9 +27,13 @@ class HomeFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
+        update()
+    }
+
+    fun update() {
         log.text = ""
-        for (song in SongCollection.list) {
-            log.append("${song.title}\n")
+        for (work in WorkCollection.list) {
+            log.append("${work.artist} - ${work.title}\n")
             // TODO: more info
         }
     }

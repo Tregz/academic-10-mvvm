@@ -1,12 +1,12 @@
-package com.tregz.miksing.home.song
+package com.tregz.miksing.home.work
 
 import com.tregz.miksing.data.DataModel
 
-object SongCollection {
+object WorkCollection {
 
-    val list = mutableListOf<DataModel.Song>()
-    private val set = mutableSetOf<DataModel.Song>()
-    private val map = mutableMapOf<Int, DataModel.Song>()
+    val list = mutableListOf<DataModel.Work>()
+    private val set = mutableSetOf<DataModel.Work>()
+    private val map = mutableMapOf<Int, DataModel.Work>()
 
     val listCount: Int
         get() = list.size
@@ -14,7 +14,7 @@ object SongCollection {
     val setCount: Int
         get() = set.size
 
-    fun add(apple: DataModel.Song): DataModel.Song {
+    fun add(apple: DataModel.Work): DataModel.Work {
         list.add(apple)
         set.add(apple)
         map[map.size] = apple

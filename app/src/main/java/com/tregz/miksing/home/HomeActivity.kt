@@ -7,10 +7,10 @@ import android.view.WindowManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.tregz.miksing.R
 import com.tregz.miksing.base.BaseActivity
-import com.tregz.miksing.home.song.SongFragment
+import com.tregz.miksing.home.work.WorkFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : BaseActivity() {
+class HomeActivity : BaseActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -19,23 +19,27 @@ class HomeActivity : BaseActivity() {
         setSupportActionBar(toolbar)
         fab.setOnClickListener {
             if (!back()) {
-                HomeNavigation.navigate(this, R.id.action_homeFragment_to_songFragment)
+                HomeNavigation.navigate(this, R.id.action_homeFragment_to_workFragment)
                 fab.isExpanded = !fab.isExpanded
                 (it as FloatingActionButton).setImageResource(R.drawable.ic_close)
             }
         }
         clear_all.setOnClickListener {
             // TODO dialog
-            with(HomeNavigation.primary(this)) { if (this is SongFragment) clear() }
+            with(HomeNavigation.primary(this)) { if (this is WorkFragment) clear() }
         }
         save.setOnClickListener {
-            with(HomeNavigation.primary(this)) { if (this is SongFragment) save() }
-            back()
+            with(HomeNavigation.primary(this)) { if (this is WorkFragment) save() }
         }
     }
 
     override fun onBackPressed() {
         back()
+    }
+
+    override fun saved() {
+        back()
+        with(HomeNavigation.primary(this)) { if (this is HomeFragment) update() }
     }
 
     private fun back(): Boolean {
