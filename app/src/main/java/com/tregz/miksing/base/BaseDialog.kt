@@ -22,7 +22,7 @@ abstract class BaseDialog(private val context: Context) : DialogInterface.OnShow
         // TODO
     }
 
-    fun exit() {
+    private fun exit() {
         alert?.apply {
             if (isShowing) dismiss()
             cancel()
@@ -47,7 +47,7 @@ abstract class BaseDialog(private val context: Context) : DialogInterface.OnShow
         }
     }
 
-    protected fun inflate(layout: Int, viewGroup: ViewGroup): View {
+    protected fun inflate(viewGroup: ViewGroup, layout: Int): View {
         return LayoutInflater.from(context).inflate(layout, viewGroup, false)
     }
 }

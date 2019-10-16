@@ -20,7 +20,7 @@ class WorkDialog(group: ViewGroup, listener: WorkView, private var date: Date) :
 
     init {
         builder.setTitle(R.string.song_release_date)
-        val view = inflate(R.layout.picker_date, group)
+        val view = inflate(group, R.layout.picker_date)
         Calendar.getInstance().apply {
             time = date
             val year = get(Calendar.YEAR)

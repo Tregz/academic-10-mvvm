@@ -17,7 +17,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun <T: BaseDialog> add(dialog: T): T {
+    fun add(dialog: BaseDialog): BaseDialog {
         dialogs.add(dialog)
         return dialog
     }

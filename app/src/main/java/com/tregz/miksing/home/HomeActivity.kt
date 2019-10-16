@@ -10,7 +10,7 @@ import com.tregz.miksing.base.BaseActivity
 import com.tregz.miksing.home.work.WorkFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : BaseActivity(), MainView {
+class HomeActivity : BaseActivity(), HomeView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -29,6 +29,7 @@ class HomeActivity : BaseActivity(), MainView {
             with(HomeNavigation.primary(this)) { if (this is WorkFragment) clear() }
         }
         save.setOnClickListener {
+            // TODO dialog
             with(HomeNavigation.primary(this)) { if (this is WorkFragment) save() }
         }
     }
@@ -54,7 +55,7 @@ class HomeActivity : BaseActivity(), MainView {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_scrolling, menu)
+        menuInflater.inflate(R.menu.menu_home, menu)
         return true
     }
 

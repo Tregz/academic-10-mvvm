@@ -42,7 +42,6 @@ class WorkFragment : BaseFragment(), AdapterView.OnItemSelectedListener, WorkVie
     private var dirty: Boolean = false
     private var mix: Int = 0
     private var releasedAt: Date? = null
-    private var type: Work = Work.values()[0]
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -121,7 +120,7 @@ class WorkFragment : BaseFragment(), AdapterView.OnItemSelectedListener, WorkVie
     }
 
     fun save() {
-        val work = when(type) {
+        val work = when(Work.values()[sp_work_type.selectedItemPosition]) {
             Work.SONG -> DataModel.Work.Song(Date())
             Work.TAKE -> DataModel.Work.Take(Date())
         }

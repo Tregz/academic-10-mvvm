@@ -23,7 +23,7 @@ sealed class DataModel(
             override val copy: Date,
             var kind: Int = 0,
             var last: String? = null
-        ) : DataModel.Work(copy = copy) {
+        ) : DataModel.Work(copy) {
 
             companion object {
                 val TAG = Song::class.java.simpleName
@@ -31,7 +31,7 @@ sealed class DataModel(
         }
 
         @Parcelize
-        data class Take(override val copy: Date) : DataModel.Work(copy = copy)
+        data class Take(override val copy: Date) : DataModel.Work(copy)
 
     }
 

@@ -5,8 +5,8 @@ import com.tregz.miksing.data.DataModel
 var DataModel.Work.Song.dirty : Boolean
     get() = kind >= Kind.UNDEFINED_DIRTY.ordinal
     set(value) {
-        if (value && !dirty) kind = Kind.values()[kind].ordinal + 5
-        else if (!value && dirty) kind = Kind.values()[kind].ordinal - 5
+        if (value && !dirty) kind += Kind.UNDEFINED_DIRTY.ordinal
+        else if (!value && dirty) kind -= Kind.UNDEFINED_DIRTY.ordinal
     }
 var DataModel.Work.Song.mixedBy
     get() = last

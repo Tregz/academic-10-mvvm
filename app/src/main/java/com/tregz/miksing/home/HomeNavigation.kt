@@ -11,7 +11,7 @@ import com.tregz.miksing.base.BaseFragment
 
 object HomeNavigation {
 
-    private const val host = R.id.nav_host_fragment
+    private const val HOST = R.id.nav_host_fragment
 
     fun fragmentId(activity: AppCompatActivity): Int? {
         val destination = controller(activity).currentDestination
@@ -32,10 +32,10 @@ object HomeNavigation {
     }
 
     private fun controller(activity: AppCompatActivity): NavController {
-        return Navigation.findNavController(activity, host)
+        return Navigation.findNavController(activity, HOST)
     }
 
     private fun FragmentManager.host() : NavHostFragment? {
-        return findFragmentById(host) as NavHostFragment?
+        return findFragmentById(HOST) as NavHostFragment?
     }
 }

@@ -14,11 +14,11 @@ object WorkCollection {
     val setCount: Int
         get() = set.size
 
-    fun add(apple: DataModel.Work): DataModel.Work {
-        list.add(apple)
-        set.add(apple)
-        map[map.size] = apple
-        return apple
+    fun add(work: DataModel.Work): DataModel.Work {
+        list.add(work)
+        set.add(work)
+        map[map.size] = work
+        return work
     }
 
     fun clear() {

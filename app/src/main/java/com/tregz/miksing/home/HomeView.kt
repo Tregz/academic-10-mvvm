@@ -1,6 +1,6 @@
 package com.tregz.miksing.home
 
-interface MainView {
+interface HomeView {
 
     fun saved()
 
